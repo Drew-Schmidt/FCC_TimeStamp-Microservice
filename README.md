@@ -1,3 +1,5 @@
 # Timestamp Microservice
 
-This is the boilerplate code for the Timestamp Microservice project. Instructions for building your project can be found at https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/timestamp-microservice
+This project is one of five required microservices for the FreeCodeCamp Back-End Development and API Certification. 
+
+The purpose of this microservice is to demonstrate understanding of middleware functions used in NODE.JS and Express.
