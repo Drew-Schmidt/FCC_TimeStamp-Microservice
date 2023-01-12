@@ -1,12 +1,11 @@
 var express = require('express');
 var app = express();
-
-// for remote API testing by FCC 
 var cors = require('cors');
-app.use(cors({ optionsSuccessStatus: 200 }));  
-// some legacy browsers choke on 204
 
+
+app.use(cors({ optionsSuccessStatus: 200 }));  
 app.use(express.static('public'));
+
 
 app.get("/", function(req, res) {
   res.sendFile(__dirname + '/views/index.html');
@@ -34,15 +33,13 @@ app.get("/api/:date", (req, res) => {
       unix: Number(input), 
       utc: date.toUTCString() 
     })
-  }
-    
+  } 
   // Input format is invalid
   else if (isNaN(Date.parse(input))) {
     res.json({ 
       error: "Invalid Date" 
     })  
-  }
-    
+  } 
   // Input is format is acceptable
   else {
     res.json({ 
@@ -52,7 +49,6 @@ app.get("/api/:date", (req, res) => {
   } 
 });
 
-// listen for requests :)
 var listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });
